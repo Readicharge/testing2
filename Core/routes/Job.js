@@ -12,11 +12,13 @@ router.post("/",Job.createJob);
 // Getting all the Job
 router.get("/",Job.getJob);
 
+// Getting the Job for the Specific Technician
+router.get("/technician/:id",Job.getTechnicianJobList);
+
 // Getting the Specific Job
 router.get("/:id",Job.getSpecificJob);
 
-// Getting the Job for the Specific Technician
-router.get("/technician/:id",Job.getTechnicianJobList);
+
     
 // Updating the Job 
 router.put("/:id",Job.updateJob);
