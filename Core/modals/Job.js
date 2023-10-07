@@ -27,7 +27,7 @@ const bookingSchema = new mongoose.Schema({
     type:String
   },
   customerEmail:{
-    type:Email
+    type:String
   },
   technician: {
     type: mongoose.Schema.Types.ObjectId,
