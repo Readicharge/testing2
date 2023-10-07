@@ -6,7 +6,29 @@ const bookingSchema = new mongoose.Schema({
   //   ref: 'User',
   //   
   // },
- 
+  jobId:{
+    type:String,
+  },
+  jobStatus:{
+    type:String,
+    enum:['Upcoming','Completed']
+  },
+  jobType:{
+    type:String,
+    enum:['Repairing','Inspection']
+  },
+  customerName:{
+    type:String
+  },
+  customerAddress:{
+    type:String
+  },
+  customerPhone:{
+    type:String
+  },
+  customerEmail:{
+    type:Email
+  },
   technician: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Technician',
@@ -33,13 +55,8 @@ const bookingSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  materialCost: {
-    type: Number,
-    default: 0
-  },
   customerShowingCost: {
     type: Number,
-    
   },
   completion_steps: {
     // This is for the Overall completion and also verified from the Customer Side
@@ -67,9 +84,6 @@ const bookingSchema = new mongoose.Schema({
       type: String,
       enum: ['Pending', 'Paid'],
       default: 'Pending'
-    },
-    completionStatus: {
-      type: Boolean,
     },
     technician_payment_release_status: {
       released:{
