@@ -27,6 +27,17 @@ const getJob = async (req,res) => {
     }
 }
 
+// Getting the list of Jobs for the Particular Technician 
+const getTechnicianJobList = async(req,res) => {
+       try {
+        const job = await Job.find({technician:req.params.id});
+        res.status(200).json(job);
+    }
+    catch(error) {
+        res.status(400).json({error:error.message});
+    }
+}
+
 
 // Getting the Specific Job by Id 
 const getSpecificJob = async (req,res) => {
@@ -85,5 +96,6 @@ module.exports = {
     getJob,
     getSpecificJob,
     updateJob,
-    deleteJob
+    deleteJob,
+    getTechnicianJobList
 }
