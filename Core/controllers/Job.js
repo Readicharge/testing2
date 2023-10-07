@@ -30,6 +30,7 @@ const getJob = async (req,res) => {
 // Getting the list of Jobs for the Particular Technician 
 const getTechnicianJobList = async(req,res) => {
        try {
+        console.log("Hello");
         const job = await Job.find({technician:req.params.id});
         res.status(200).json(job);
     }
