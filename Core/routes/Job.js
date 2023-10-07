@@ -13,7 +13,7 @@ router.post("/",Job.createJob);
 router.get("/",Job.getJob);
 
 // Getting the Job for the Specific Technician
-router.get("/technician/:id",Job.getTechnicianJobList);
+router.get("/tech/:id",Job.getTechnicianJobList);
 
 // Getting the Specific Job
 router.get("/:id",Job.getSpecificJob);
